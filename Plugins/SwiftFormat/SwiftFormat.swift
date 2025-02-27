@@ -34,7 +34,7 @@ struct SwiftFormat: BuildToolPlugin {
 
     extension SwiftFormat: XcodeBuildToolPlugin {
         func createBuildCommands(context: XcodeProjectPlugin.XcodePluginContext, target: XcodeProjectPlugin.XcodeTarget) throws -> [PackagePlugin.Command] {
-            let files = target.inputFiles.filter { $0.type == .source }.map(\.url)
+            let files = target.inputFiles.filter { $0.type == .source && $0.url.pathExtension == "swift" }.map(\.url)
 
             return [
                 try makeCommand(
