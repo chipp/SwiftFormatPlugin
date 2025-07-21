@@ -21,7 +21,7 @@ let package = Package(
             name: "SwiftFormat",
             capability: .buildTool(),
             dependencies: [
-                .target(name: "swiftformat")
+                .target(name: "SwiftFormatBinary")
             ]
         ),
         .plugin(
@@ -30,13 +30,13 @@ let package = Package(
                 .writeToPackageDirectory(reason: "Fixing SwiftFormat issues")
             ]),
             dependencies: [
-                .target(name: "swiftformat")
+                .target(name: "SwiftFormatBinary")
             ]
         ),
         .binaryTarget(
-            name: "swiftformat",
-            url: "https://github.com/nicklockwood/SwiftFormat/releases/download/0.57.2/swiftformat.artifactbundle.zip",
-            checksum: "db2b6495281c5a6af35a73cb819a663e0263837074b8e97cc824dee2d8f8c052"
+            name: "SwiftFormatBinary",
+            url: "https://github.com/nicklockwood/SwiftFormat/releases/download/0.57.0/swiftformat.artifactbundle.zip",
+            checksum: "9d1a93790c36847d9d98bc8b9deda80c46e5faa157e6f9529f3364acc9a367dd"
         )
     ]
 )
