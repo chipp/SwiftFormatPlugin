@@ -1,0 +1,3 @@
+# SwiftFormatPlugin
+
+Auto updated daily
